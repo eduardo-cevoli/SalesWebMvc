@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using SallesWebMvc.Data;
+using SalesWebMvc.Data;
 
-namespace SallesWebMvc
+namespace SalesWebMvc
 {
     public class Startup
     {
@@ -36,8 +36,9 @@ namespace SallesWebMvc
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<SallesWebMvcContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SallesWebMvcContext")));
+            services.AddDbContext<SalesWebMvcContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("SalesWebMvcContext"), builder =>
+                         builder.MigrationsAssembly("SalesWebMvc")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
