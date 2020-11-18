@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SallesWebMvc": {
+    "SalesWebMvc": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
